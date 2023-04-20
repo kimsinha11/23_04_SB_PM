@@ -45,15 +45,8 @@ public class UsrArticleController {
 
 	@RequestMapping("/usr/article/write")
 
-	public String write(Model model,   String title, String body) {
-	
-//		if (Ut.empty(title)) {
-//			return Ut.jsHistoryBack("F-A", "제목을 입력해주세요.");
-//		}
-//		if (Ut.empty(body)) {
-//			return Ut.jsHistoryBack("F-A", "내용을 입력해주세요");
-//		}
-		
+	public String write(Model model, String title, String body) {
+
 		return "usr/article/write";
 	}
 	@RequestMapping("/usr/article/doModify")
@@ -70,21 +63,20 @@ public class UsrArticleController {
 	@ResponseBody
 	public String doWrite(HttpServletRequest req, HttpSession httpSession, String title, String body) {
 		Rq rq = new Rq(req);
-		boolean isLogined = false;
-		int loginedMemberId = 0;
-
-		if (httpSession.getAttribute("loginedMemberId") != null) {
-			isLogined = true;
-			loginedMemberId = (int) httpSession.getAttribute("loginedMemberId");
-		}
-		
-		
+	
 		if (rq.isLogined() == false) {
 			return String.format("<script>alert('로그인 후 이용해 주세요..'); location.replace('list');</script>");
 
 		}
 		
-		articleService.writeArticle(title, body, loginedMemberId);
+		
+		if (Ut.empty(title)) {
+			return Ut.jsHistoryBack("F-A", "제목을 입력해주세요.");
+		}
+		if (Ut.empty(body)) {
+			return Ut.jsHistoryBack("F-A", "내용을 입력해주세요");
+		}
+		articleService.writeArticle(title, body, rq.getLoginedMemberId());
 		
 		
 		return String.format("<script>alert('작성되었습니다.'); location.replace('list');</script>");

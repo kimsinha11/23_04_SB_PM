@@ -1,67 +1,39 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>${pageTitle  }</title>
-<!-- Å×ÀÏÀ©µå ºÒ·¯¿À±â -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
-<!-- ÆùÆ®¾î½æ ºÒ·¯¿À±â -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-<!-- Á¦ÀÌÄõ¸® ºÒ·¯¿À±â -->
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- í…Œì¼ìœˆë“œ ë¶ˆëŸ¬ì˜¤ê¸° -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" />
+<!-- í°íŠ¸ì–´ì¸ ë¶ˆëŸ¬ì˜¤ê¸° -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+<!-- ì œì´ì¿¼ë¦¬ ë¶ˆëŸ¬ì˜¤ê¸° -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <link rel="stylesheet" href="/resource/common.css" />
 <script src="/resource/common.js" defer="defer"></script>
 </head>
-<body style="text-align: center;">
-	<h1 style="font-size: 55px;">${pageTitle  }</h1>
-	<div class = "menu-box"
-		style="border: 1px solid black; display: inline-block; width: 10%; text-align: center;">
-		<a style="display: block;" href="../home/main">¸ŞÀÎÆäÀÌÁö·Î ÀÌµ¿</a>
-	</div>
-	<div class = "menu-box"
-		style="border: 1px solid black; display: inline-block; width: 10%; text-align: center;">
-		<a style="display: block;" href="#">±Û¾²±â</a>
-	</div>
-	<div class = "menu-box"
-		style="border: 1px solid black; display: inline-block; width: 10%; text-align: center;">
-		<a style="display: block;" href="#">·Î±×ÀÎ</a>
-	</div>
-	<div class = "menu-box"
-		style="border: 1px solid black; display: inline-block; width: 10%; text-align: center;">
-		<a style="display: block;" href="/usr/article/list">°Ô½Ã±Û·Î ÀÌµ¿</a>
-	</div>
-	<hr />
-<style>
-.menu-box:hover {
-	background-color: pink;
-	color: black;
-}
+<body>
+		<h1 style="text-align: center; font-size: 55px;">${pageTitle  }</h1>
 
-</style>
+		<div class="h-10 flex mx-auto px-8 text-2xl ">
+				<a href="/">ë¡œê³ </a>  
+				<div class="flex-grow"></div>
+		<div style="border: 1px solid black; display: inline-block; width: 9%; text-align: center;">
+				<a style="display: block;" href="../home/main">ë©”ì¸í˜ì´ì§€</a>
+		</div>
+		<div style="border: 1px solid black; display: inline-block; width: 9%; text-align: center;">
+				<a style="display: block;" href="/usr/article/write">ê¸€ì“°ê¸°</a>
+		</div>
+		<div style="border: 1px solid black; display: inline-block; width: 9%; text-align: center;">
+				<a style="display: block;" href="/usr/member/doLogin">ë¡œê·¸ì¸</a>
+		</div>
+		<div style="border: 1px solid black; display: inline-block; width: 9%; text-align: center;">
+				<a style="display: block;" href="/usr/article/list">ë¦¬ìŠ¤íŠ¸</a>
+		</div>
+		</div>
 
-	<style>
-table {
-	border: 2px solid black;
-	border-collapse: collapse;
-	width: 700px;
-	background-color: pink;
-	margin-left: auto;
-	margin-right: auto;
-}
+		<hr />
 
-th {
-	border: 1px solid black;
-	text-align: center;
-	padding: 8px;
-	font-size: 17px;
-	font-weight: light;
-}
-</style>
-
-	<main>
+		<main>
